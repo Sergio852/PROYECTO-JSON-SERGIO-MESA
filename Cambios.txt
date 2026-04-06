@@ -1,0 +1,25 @@
+El código actualizado, respecto al código original:
+
+    He mantenido la misma idea básica: nombre de la escuadra, ciudad, año de formación, base secreta, estado activo y array members con héroes.
+
+    Lo que he cambiado y añadido en el último código es:
+
+        Más objetos anidados: headquarters, location, coordinates, address, mission, status, etc.
+
+        Más arrays dentro de objetos: backupSites, emergencyProtocols, skills, emails, phones, missions, debriefing, equipment, etc.
+
+        Más tipos de datos: cadenas, números enteros, números decimales (float), booleanos (true/false) y valores null.
+
+        Para cada héroe he añadido:
+
+            contact (con emails y phones como arrays),
+
+            skills (array de habilidades),
+
+            stats (valores numéricos),
+
+            missions con más detalles,
+
+            equipment con objetos de equipo,
+
+            notes y otros campos opcionales.
