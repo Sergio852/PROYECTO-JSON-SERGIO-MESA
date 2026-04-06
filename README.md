@@ -86,16 +86,26 @@ El programa debe:
 
 • Recorrer todos los héroes y todos sus equipos en equipo, sin limitarse
 solo a algunos miembros
+
 • Mostrar qué héroes poseen al menos un equipo de ese tipo, y para
 cada coincidencia indicar:
+
 • Nombre del héroe
+
 • Nombre del equipo
+
 • Tipo de equipo
+
 • Datos adicionales del equipo, si existen, como:
+
 • Multiplicadores de daño, si tiene multiplicadoresDano
+
 • Velocidad máxima, si tiene velocidadMaxKmH
+
 • Consumo de energía por hora, si tiene energiaUsadaPorHora
+
 • Alcance máximo, si tiene rangoMaxMetros
+
 • Si tiene modo térmico, modoTermico, etc.
 
 También debe:
@@ -104,14 +114,19 @@ También debe:
 su nombre y un mensaje tipo "sin equipo asignado", para obligar a
 recorrer todo el array de héroes aunque no tengan equipo
 Además, al final debe mostrar estadísticas globales:
+
 • Cuántos equipos de ese tipo hay en total en todo el JSON
+
 • Cuántos héroes distintos tienen al menos un equipo de ese tipo
+
 • El número total de equipos, de cualquier tipo, que hay en la escuadra
+
 • Un pequeño resumen por tipo de equipo, indicando para cada tipo
 cuántos equipos hay, por ejemplo: melee: 1, movilidad: 1, sigilo:
 1, vision: 1
 
 Objetivo:
+
 Combinar filtro por teclado, recorrido completo de arrays anidados, héroes
 → equipos, tratamiento de héroes sin equipo y cálculo de estadísticas
 finales, tanto por tipo como globales.
