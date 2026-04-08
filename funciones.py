@@ -28,4 +28,22 @@ def listar_informacion_heroes(datos):
         print("Numero de emails: " + str(len(emails)) + " │ Poderes: " + str(len(poderes)))
         print("-" * 30)
 
+def contar_informacion(datos):
+    miembros = datos["miembros"]
+    total_heroes = len(miembros)
+    heroes_con_3_poderes = 0
+    heroes_con_2_emails = 0
 
+    for heroe in miembros:
+        poderes = heroe["poderes"]
+        emails = heroe["contacto"]["emails"]
+
+        if len(poderes) >= 3:
+            heroes_con_3_poderes = heroes_con_3_poderes + 1
+        if len(emails) >= 2:
+            heroes_con_2_emails = heroes_con_2_emails + 1
+
+    print("\n--- CONTADORES ---")
+    print("Total de heroes en la escuadra: " + str(total_heroes))
+    print("Heroes con al menos 3 superpoderes: " + str(heroes_con_3_poderes))
+    print("Heroes con al menos 2 emails: " + str(heroes_con_2_emails))
