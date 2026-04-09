@@ -47,3 +47,33 @@ def contar_informacion(datos):
     print("Total de heroes en la escuadra: " + str(total_heroes))
     print("Heroes con al menos 3 superpoderes: " + str(heroes_con_3_poderes))
     print("Heroes con al menos 2 emails: " + str(heroes_con_2_emails))
+
+def buscar_por_nombre(datos, texto):
+    miembros = datos["miembros"]
+    texto = texto.lower()
+    encontrado = False
+
+    print("\n--- BUSQUEDA POR NOMBRE ---")
+    for heroe in miembros:
+        nombre = heroe["nombre"]
+
+        if texto in nombre.lower():
+            encontrado = True
+            edad = heroe["edad"]
+            identidad = heroe["identidadSecreta"]
+            poderes = heroe["poderes"]
+
+            if identidad is None:
+                identidad = "No tiene identidad secreta"
+
+            print("Nombre: " + str(nombre))
+            print("Edad: " + str(edad))
+            print("Identidad secreta: " + str(identidad))
+            print("Poderes:")
+            for poder in poderes:
+                print("- " + str(poder))
+            print("-" * 30)
+
+    if encontrado == False:
+        print("No se ha encontrado ningun heroe con ese nombre o texto.")
+
