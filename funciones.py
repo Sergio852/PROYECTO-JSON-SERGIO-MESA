@@ -77,3 +77,34 @@ def buscar_por_nombre(datos, texto):
     if encontrado == False:
         print("No se ha encontrado ningun heroe con ese nombre o texto.")
 
+def buscar_por_poder(datos, nombre_poder):
+    miembros = datos["miembros"]
+    nombre_poder = nombre_poder.lower()
+    encontrado = False
+
+    print("\n--- BUSQUEDA POR PODER ---")
+    for heroe in miembros:
+        poderes = heroe["poderes"]
+
+        for poder in poderes:
+            if poder.lower() == nombre_poder:
+                encontrado = True
+                nombre = heroe["nombre"]
+                edad = heroe["edad"]
+                identidad = heroe["identidadSecreta"]
+                misiones = heroe["misiones"]
+
+                if identidad is None:
+                    identidad = "No tiene identidad secreta"
+
+                print("Nombre: " + str(nombre))
+                print("Edad: " + str(edad))
+                print("Identidad secreta: " + str(identidad))
+                print("Numero de misiones: " + str(len(misiones)))
+                print("-" * 30)
+                break
+
+    if encontrado == False:
+        print("No existe ningun heroe con ese poder.")
+
+

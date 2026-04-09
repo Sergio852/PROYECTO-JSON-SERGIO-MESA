@@ -1,5 +1,6 @@
 from funciones import (cargar_datos,listar_informacion_heroes,
-                       contar_informacion, buscar_por_nombre)
+                       contar_informacion, buscar_por_nombre,
+                       buscar_por_poder)
 
 datos = cargar_datos("datos.json")
 opcion = ""
@@ -11,6 +12,7 @@ while opcion != "0":
 1. Listar informacion de los heroes
 2. Contar Informacion
 3. Buscar Heroes por su Nombre
+4. Buscar Heroes por su poder
 0.Salir
 """)
 
@@ -22,6 +24,8 @@ while opcion != "0":
         contar_informacion(datos)
     elif opcion == "3":
         buscar_por_nombre(datos)
+    elif opcion == "4":
+        buscar_por_poder(datos)
     elif opcion == "0":
         print("Saliendo del programa...")
     else:
