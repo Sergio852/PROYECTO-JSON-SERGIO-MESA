@@ -156,9 +156,7 @@ def buscar_por_tipo_equipo(datos, tipo):
                         print("Modo termico: " + str(equipo["modoTermico"]))
                     if "nivelBateria" in equipo:
                         print("Nivel de bateria: " + str(equipo["nivelBateria"]))
-                    if "seguroRecurso" in equipo:
-                        print("Seguro por recurso: " + str(equipo["seguroRecurso"]))
-
+                    
                     print("-" * 30)
 
     if total_equipos_tipo == 0:
