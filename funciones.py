@@ -108,3 +108,67 @@ def buscar_por_poder(datos, nombre_poder):
         print("No existe ningun heroe con ese poder.")
 
 
+def buscar_por_tipo_equipo(datos, tipo):
+    miembros = datos["miembros"]
+    tipo = tipo.lower()
+    total_equipos_tipo = 0
+    total_equipos = 0
+    heroes_con_tipo = []
+    resumen_tipos = {}
+
+    print("\n--- BUSQUEDA POR TIPO DE EQUIPO ---")
+
+    for heroe in miembros:
+        nombre_heroe = heroe["nombre"]
+        equipos = heroe.get("equipo", [])
+
+        if len(equipos) == 0:
+            print(nombre_heroe + ": sin equipo asignado")
+        else:
+            for equipo in equipos:
+                total_equipos = total_equipos + 1
+                tipo_equipo = equipo["tipo"]
+
+                if tipo_equipo in resumen_tipos:
+                    resumen_tipos[tipo_equipo] = resumen_tipos[tipo_equipo] + 1
+                else:
+                    resumen_tipos[tipo_equipo] = 1
+
+                if tipo_equipo.lower() == tipo:
+                    total_equipos_tipo = total_equipos_tipo + 1
+
+                    if nombre_heroe not in heroes_con_tipo:
+                        heroes_con_tipo.append(nombre_heroe)
+
+                    print("Heroe: " + str(nombre_heroe))
+                    print("Equipo: " + str(equipo["nombre"]))
+                    print("Tipo: " + str(tipo_equipo))
+
+                    if "multiplicadoresDano" in equipo:
+                        print("Multiplicadores de daño: " + str(equipo["multiplicadoresDano"]))
+                    if "velocidadMaxKmH" in equipo:
+                        print("Velocidad maxima: " + str(equipo["velocidadMaxKmH"]) + " km/h")
+                    if "energiaUsadaPorHora" in equipo:
+                        print("Consumo de energia por hora: " + str(equipo["energiaUsadaPorHora"]))
+                    if "rangoMaxMetros" in equipo:
+                        print("Rango maximo: " + str(equipo["rangoMaxMetros"]) + " metros")
+                    if "modoTermico" in equipo:
+                        print("Modo termico: " + str(equipo["modoTermico"]))
+                    if "nivelBateria" in equipo:
+                        print("Nivel de bateria: " + str(equipo["nivelBateria"]))
+                    if "seguroRecurso" in equipo:
+                        print("Seguro por recurso: " + str(equipo["seguroRecurso"]))
+
+                    print("-" * 30)
+
+    if total_equipos_tipo == 0:
+        print("No existe ningun equipo de ese tipo de equipo.")
+
+    print("\n--- ESTADISTICAS FINALES ---")
+    print("Equipos del tipo '" + str(tipo) + "': " + str(total_equipos_tipo))
+    print("Heroes distintos con ese tipo de equipo: " + str(len(heroes_con_tipo)))
+    print("Numero total de equipos en la escuadra: " + str(total_equipos))
+    print("Resumen por tipo de equipo:")
+
+    for tipo_equipo in resumen_tipos:
+        print("- " + str(tipo_equipo) + ": " + str(resumen_tipos[tipo_equipo]))
