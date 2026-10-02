@@ -130,3 +130,6 @@ Objetivo:
 Combinar filtro por teclado, recorrido completo de arrays anidados, héroes
 → equipos, tratamiento de héroes sin equipo y cálculo de estadísticas
 finales, tanto por tipo como globales.
+
+
+Modificación Pablo (Soy el mejon)
